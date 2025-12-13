@@ -4469,6 +4469,24 @@ class DeviceAssignmentDlg(ArtisanResizeablDialog):
                 ##########################
                 ####  DEVICE 186 is +CM ET/BT
                 ##########################
+                elif meter == 'Evolv DNA' and self.aw.qmc.device != 187:
+                    self.aw.qmc.device = 187
+                    #self.aw.ser.comport = "COM4"
+                    self.aw.ser.baudrate = 9600
+                    self.aw.ser.bytesize = 8
+                    self.aw.ser.parity= 'N'
+                    self.aw.ser.stopbits = 1
+                    self.aw.ser.timeout = 0.7
+                    message = QApplication.translate('Message','Device set to {0}, which is equivalent to CENTER 309. Now, choose serial port').format(meter)
+                ##########################
+                ####  DEVICE 188 is +Evolv DNA 34
+                ##########################
+                ##########################
+                ####  DEVICE 189 is +Evolv DNA 56
+                ##########################
+                ##########################
+                ####  DEVICE 190 is +Evolv DNA 78
+                ##########################
 
                 # ADD DEVICE:
 
@@ -4674,7 +4692,11 @@ class DeviceAssignmentDlg(ArtisanResizeablDialog):
                 1, # 183
                 3, # 184
                 3, # 185
-                3  # 186
+                3, # 186
+                3, # 187
+                3, # 188
+                3, # 189
+                3  # 190
                 ]
             #init serial settings of extra devices
             for i, _ in enumerate(self.aw.qmc.extradevices):
